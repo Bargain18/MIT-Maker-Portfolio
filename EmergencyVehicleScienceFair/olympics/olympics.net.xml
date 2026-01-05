@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-11-26 22:14:31 by Eclipse SUMO netedit Version 1.19.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
+
+    <input>
+        <sumocfg-file value="C:\LakshitAhuja\Science Fair 23-24\SUMO\olympics.sumocfg"/>
+        <sumo-net-file value="C:\LakshitAhuja\Science Fair 23-24\SUMO\olympics.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\LakshitAhuja\Science Fair 23-24\SUMO\olympics.net.xml"/>
+    </output>
+
+    <processing>
+        <offset.disable-normalization value="true"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+    </junctions>
+
+    <netedit>
+        <new-network value="false"/>
+    </netedit>
+
+</configuration>
+-->
+
+<net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,1000.00,0.00" origBoundary="10000000000.00,10000000000.00,-10000000000.00,-10000000000.00" projParameter="!"/>
+
+    <edge id=":hold_0" function="internal">
+        <lane id=":hold_0_0" index="0" allow="pedestrian" speed="13.89" length="0.10" width="2.00" shape="900.00,-12.70 900.00,-12.70"/>
+        <lane id=":hold_0_1" index="1" allow="bicycle" speed="13.89" length="0.10" width="2.10" shape="900.00,-10.65 900.00,-10.65"/>
+        <lane id=":hold_0_2" index="2" allow="bus" speed="13.89" length="0.10" shape="900.00,-8.00 900.00,-8.00"/>
+        <lane id=":hold_0_3" index="3" allow="passenger" speed="13.89" length="0.10" shape="900.00,-4.80 900.00,-4.80"/>
+        <lane id=":hold_0_4" index="4" allow="rail_urban" speed="13.89" length="0.10" shape="900.00,-1.60 900.00,-1.60"/>
+    </edge>
+
+    <edge id="beg" from="start" to="hold" priority="-1">
+        <lane id="beg_0" index="0" allow="pedestrian" speed="13.89" length="900.00" width="2.00" shape="0.00,-12.70 900.00,-12.70"/>
+        <lane id="beg_1" index="1" allow="bicycle" speed="13.89" length="900.00" width="2.10" shape="0.00,-10.65 900.00,-10.65"/>
+        <lane id="beg_2" index="2" allow="bus" speed="13.89" length="900.00" shape="0.00,-8.00 900.00,-8.00"/>
+        <lane id="beg_3" index="3" allow="passenger" speed="13.89" length="900.00" shape="0.00,-4.80 900.00,-4.80"/>
+        <lane id="beg_4" index="4" allow="rail_urban" speed="13.89" length="900.00" shape="0.00,-1.60 900.00,-1.60"/>
+    </edge>
+    <edge id="end" from="hold" to="last" priority="-1">
+        <lane id="end_0" index="0" allow="pedestrian" speed="13.89" length="100.00" width="2.00" shape="900.00,-12.70 1000.00,-12.70"/>
+        <lane id="end_1" index="1" allow="bicycle" speed="13.89" length="100.00" width="2.10" shape="900.00,-10.65 1000.00,-10.65"/>
+        <lane id="end_2" index="2" allow="bus" speed="13.89" length="100.00" shape="900.00,-8.00 1000.00,-8.00"/>
+        <lane id="end_3" index="3" allow="passenger" speed="13.89" length="100.00" shape="900.00,-4.80 1000.00,-4.80"/>
+        <lane id="end_4" index="4" allow="rail_urban" speed="13.89" length="100.00" shape="900.00,-1.60 1000.00,-1.60"/>
+    </edge>
+
+    <tlLogic id="hold" type="static" programID="0" offset="0">
+        <phase duration="82" state="GGGGG"/>
+        <phase duration="3"  state="yyyyy"/>
+        <phase duration="5"  state="rrrrr"/>
+    </tlLogic>
+
+    <junction id="hold" type="traffic_light" x="900.00" y="0.00" incLanes="beg_0 beg_1 beg_2 beg_3 beg_4" intLanes=":hold_0_0 :hold_0_1 :hold_0_2 :hold_0_3 :hold_0_4" shape="900.00,0.00 900.00,-13.70 900.00,0.00">
+        <request index="0" response="00000" foes="00000" cont="0"/>
+        <request index="1" response="00000" foes="00000" cont="0"/>
+        <request index="2" response="00000" foes="00000" cont="0"/>
+        <request index="3" response="00000" foes="00000" cont="0"/>
+        <request index="4" response="00000" foes="00000" cont="0"/>
+    </junction>
+    <junction id="last" type="dead_end" x="1000.00" y="0.00" incLanes="end_0 end_1 end_2 end_3 end_4" intLanes="" shape="1000.00,-13.70 1000.00,0.00"/>
+    <junction id="start" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-13.70"/>
+
+    <connection from="beg" to="end" fromLane="0" toLane="0" via=":hold_0_0" tl="hold" linkIndex="0" dir="s" state="O"/>
+    <connection from="beg" to="end" fromLane="1" toLane="1" via=":hold_0_1" tl="hold" linkIndex="1" dir="s" state="O"/>
+    <connection from="beg" to="end" fromLane="2" toLane="2" via=":hold_0_2" tl="hold" linkIndex="2" dir="s" state="O"/>
+    <connection from="beg" to="end" fromLane="3" toLane="3" via=":hold_0_3" tl="hold" linkIndex="3" dir="s" state="O"/>
+    <connection from="beg" to="end" fromLane="4" toLane="4" via=":hold_0_4" tl="hold" linkIndex="4" dir="s" state="O"/>
+
+    <connection from=":hold_0" to="end" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":hold_0" to="end" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":hold_0" to="end" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":hold_0" to="end" fromLane="3" toLane="3" dir="s" state="M"/>
+    <connection from=":hold_0" to="end" fromLane="4" toLane="4" dir="s" state="M"/>
+
+</net>

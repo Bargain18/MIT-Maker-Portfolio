@@ -1,0 +1,7 @@
+<configuration>
+    <input>
+        <net-file value="circlesfollow.net.xml" />
+        <route-files value="circlesfollow.rou.xml" />
+        <additional-files value="circlesfollow.add.xml" />
+    </input>
+</configuration>
